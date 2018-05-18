@@ -397,6 +397,7 @@ extension LightboxController: HeaderViewDelegate {
         guard self.numberOfPages != 1 else {
             self.pageViews.removeAll()
             self.headerView(headerView, didPressCloseButton: headerView.closeButton)
+            self.imageDeleteDelegate?.lightboxController(self, didDeleteImageAt: self.currentPage)
             return
         }
 
